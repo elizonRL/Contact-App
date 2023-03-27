@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contac App</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+ <header>
+    <nav>
+        <ul>
+            <li><a href="#">Add Contac</a></li>
+            <li><a href="#">List Contac</a></li>
+        </ul>
+    </nav>
+    <div id="inicio">
+        <h1>Contac App</h1>
+        <h2>Agenda Web para almacenar tus numeros</h2>
+    </div>
+ </header>
+ <main>
+    <div id="add-contac" class="main">
+        <h3>Agrege un contacto</h3>
+        <p id="error"></p>
+        <form action="#" id="form">
+            <div>
+                <label for="name">Nombre <span class="requerido">*</span></label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div>
+                <label for="telefono">Telefono<span class="requerido">*</span></label>
+                <input type="text" name="telefono" id="telefono">
+            </div>
+            <div>
+                <input type="submit"  id="btn">
+            </div>
+        </form>
+    </div>
+    <div id="lis-contac">
+        <div id="buscar">
+            <label for="buscar" >Buscar contacto</label>
+            <input type="search" name="buscar">
+        </div>
+        <div id="contacs">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Telefono</th>
+                        <th>Edit</th>
+                        <th>Delet</th>
+                    </tr>
+                </thead>
+                <tbody id="tr">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+ </main>
+ <script src="./js/app.js"></script>
+</body>
+</html>
