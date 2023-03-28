@@ -76,12 +76,15 @@ function agregarData(){
 
 function deletInfo(event){
     event.preventDefault();
-    console.log(event.target.classList);
-    if(event.target.classList.contains("fa-trash-can")){
-        const deletId = event.target.getAttribute("data-id");
-        contactos= contactos.filter(contacto => contacto.id !== deletId);
-        console.log(deletId);
-        agregarTabla();
+    let deletButon = confirm("Esta Seguro de borrar este Numero");
+    if(deletButon=== true){
+        console.log(event.target.classList);
+        if(event.target.classList.contains("fa-trash-can")){
+            const deletId = event.target.getAttribute("data-id");
+            contactos= contactos.filter(contacto => contacto.id !== deletId);
+            console.log(deletId);
+            agregarTabla();
+        }
     }
 }
 /** 
