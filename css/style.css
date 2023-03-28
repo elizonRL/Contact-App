@@ -39,6 +39,13 @@ a{
 a:hover{
     color: #fd0c49;
 }
+i{
+    color: #0B52B0;
+}
+i:hover{
+    color: #fd0c49;
+}
+
 .main{
     width: 300px;
     margin: 30px auto 0px auto;

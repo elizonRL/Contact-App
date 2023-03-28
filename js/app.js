@@ -85,6 +85,28 @@ function deletInfo(event){
     }
 }
 /** 
+* Funcion para editar los datos de un campo determinado 
+* @summary para editar La informacion.
+* @param {} event
+*/
+function editInfo(event){
+    event.preventDefault();
+    console.log(event.target.classList);
+    if(event.target.classList.contains("fa-pen-to-square")){
+        const editId = event.target.getAttribute("data-id");
+        for(let i=0; i<contactos.length; i++){
+            if(contactos[i].id == editId){
+                /* nombre.value=contactos[i].nombre;
+                email.value=contactos[i].email;
+                telefono.value=contactos[i].telefono;
+                console.log(contactos[i]); */
+                contactos[i].nombre= "jose"
+            }
+        }
+        agregarTabla();
+    }
+}
+/** 
 * Crea La tabla HTML de forma Dinamica al momento de guardar el el contacto.
 * @param {Array} contactos - Trae todo los contacos guardados sobre el Array.
 */
@@ -110,6 +132,7 @@ function agregarTabla(){
     }
     edit = document.getElementById("edit");
     tr.addEventListener("click", deletInfo);
+    tr.addEventListener("click", editInfo);
 }
 
 /** 
