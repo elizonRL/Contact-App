@@ -8,10 +8,11 @@ let form;
 let error;
 let email;
 let telefono;
-let contactos = []
+let contactos = [];
 let id =0;
 let tr;
 let edit;
+
 /** 
 * Funcion que crea un metodo que solo acepta numeros en el imput de numero de telefono.
 * @param {event} event - el emvento enviado por el input del formulario.
@@ -43,7 +44,7 @@ function comprobarFrom(event){
         agregarTabla();
         nombre.value="";
         email.value="";
-        telefono.value=""
+        telefono.value="";
         nombre.focus();
     }  
 /** 
@@ -67,7 +68,8 @@ function agregarData(){
             "email": email.value,
             "telefono": telefono.value
         }
-    contactos.push(contacto);   
+    contactos.push(contacto);
+    guardarDatos(contactos);
 } 
 /** 
 * Elimina un Elemento ciando se preciona el boton Delet de la tabla de comtactos.
@@ -115,6 +117,7 @@ function editInfo(event){
 */
 
 function agregarTabla(){
+    
     tr.innerHTML =" ";
     for(contactoitem of contactos){
         tr.innerHTML +=`
@@ -131,11 +134,11 @@ function agregarTabla(){
             </a></td>
             </tr>
         `;
-        
     }
     edit = document.getElementById("edit");
     tr.addEventListener("click", deletInfo);
     tr.addEventListener("click", editInfo);
+   
 }
 
 /** 
@@ -151,7 +154,10 @@ function domCagado(){
     
     telefono = document.getElementById("telefono");
     form.addEventListener("submit", comprobarFrom);
-    
+    if(optenerDatos()){
+        contactos = optenerDatos();
+    }
+    agregarTabla();
 }
 /** 
 * Escucha el evento DOMContentLoaded para verificar que todo esta cargado
