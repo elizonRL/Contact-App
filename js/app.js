@@ -39,14 +39,14 @@ function comprobarFrom(event){
         error.innerText = "El Numero es Muy Corto";
         telefono.focus();
         return false;
-    }else{
+    }
         agregarData();
-        agregarTabla();
         nombre.value="";
         email.value="";
         telefono.value="";
         nombre.focus();
-    }  
+        agregarTabla();
+    
 /** 
 * Generador de ID'S Unicos 
 * @return {substring} Brief description of the returning value here.
@@ -157,7 +157,7 @@ function domCagado(){
     if(optenerDatos()){
         contactos = optenerDatos();
     }
-    agregarTabla();
+   agregarTabla();
 }
 /** 
 * Escucha el evento DOMContentLoaded para verificar que todo esta cargado
