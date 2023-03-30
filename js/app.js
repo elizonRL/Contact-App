@@ -62,7 +62,7 @@ generarIdUnico1 = () => {
 */ 
 1
 function agregarData(){
-    if(nombre.value!==""){
+    if(nombre.value!==""&& email.value!==""&& telefono.value!==""){
         var contacto ={
             "id": generarIdUnico1(),
             "nombre": nombre.value,
