@@ -62,14 +62,18 @@ generarIdUnico1 = () => {
 */ 
 1
 function agregarData(){
-    var contacto ={
+    if(nombre.value!==""){
+        var contacto ={
             "id": generarIdUnico1(),
             "nombre": nombre.value,
             "email": email.value,
             "telefono": telefono.value
         }
-    contactos.push(contacto);
+        contactos.push(contacto);
+    }
+    
     guardarDatos(contactos);
+    
 } 
 /** 
 * Elimina un Elemento ciando se preciona el boton Delet de la tabla de comtactos.
@@ -86,6 +90,7 @@ function deletInfo(event){
             contactos= contactos.filter(contacto => contacto.id !== deletId);
             console.log(deletId);
             agregarTabla();
+            agregarData();
         }
     }
 }
